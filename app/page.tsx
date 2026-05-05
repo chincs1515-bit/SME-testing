@@ -73,24 +73,24 @@ const coveragePriorities = [
 
 // Partner List (Paths exactly as you requested)
 const partners = [
-  { name: "Mobility One", logo: "/images/partner/m1.png" },
-  { name: "MicroLeap", logo: "/images/partner/microleap.png" },
-  { name: "TFP Solution", logo: "/images/partner/tfp.png" },
-  { name: "Medilink-Global", logo: "/images/partner/medilink.png" },
-  { name: "Coded Solution", logo: "/images/partner/codedsolution.jpg" },
-  { name: "HeyDoc Health", logo: "/images/partner/heydoc.png" },
-  { name: "Emphatta", logo: "/images/partner/emphatta.png" },
-  { name: "Blaze Tech", logo: "/images/partner/blazetech.png" },
-  { name: "Allianz", logo: "/images/partner/allianz.png" },
-  { name: "Etiqa", logo: "/images/partner/etiqa.png" },
-  { name: "Kaspersky", logo: "/images/partner/kaspersky.png" },
-  { name: "Takaful Ikhlas", logo: "/images/partner/takafulikhlas.png" },
-  { name: "MDEC", logo: "/images/partner/mdec.png" }
+  { name: "Mobility One", logo: "/images/partner/m1.png", url: "https://www.mobilityone.com.my/" },
+  { name: "MicroLeap", logo: "/images/partner/microleap.png", url: "https://www.microleapasia.com/" },
+  { name: "TFP Solution", logo: "/images/partner/tfp.png", url: "https://www.tfp.com.my/" },
+  { name: "Medilink-Global", logo: "/images/partner/medilink.png", url: "https://www.medilink-global.com/" },
+  { name: "Coded Solution", logo: "/images/partner/codedsolution.jpg", url: "https://codedsolution.xyz/" },
+  { name: "HeyDoc Health", logo: "/images/partner/heydoc.png", url: "https://www.heydochealth.com/" },
+  { name: "Emphatta", logo: "/images/partner/emphatta.png", url: "https://emphatta.com.my/" },
+  { name: "Blaze Tech", logo: "/images/partner/blazetech.png", url: "https://www.blazetech.my/" },
+  { name: "Allianz", logo: "/images/partner/allianz.png", url: "https://www.allianz.com.my/" },
+  { name: "Etiqa", logo: "/images/partner/etiqa.png", url: "https://www.etiqa.com.my/" },
+  { name: "Kaspersky", logo: "/images/partner/kaspersky.png", url: "https://www.kaspersky.com/" },
+  { name: "Takaful Ikhlas", logo: "/images/partner/takafulikhlas.png", url: "https://www.takaful-ikhlas.com.my/" },
+  { name: "MDEC", logo: "/images/partner/mdec.png", url: "https://mdec.my/" }
 ];
 
 export default function HomePage() {
   const [activeCoverage, setActiveCoverage] = useState<number | null>(null);
-  
+
   // Preloader States
   const [isLoading, setIsLoading] = useState(true);
   const [fadeOutPreloader, setFadeOutPreloader] = useState(false);
@@ -123,8 +123,8 @@ export default function HomePage() {
             }
           });
         },
-        { 
-          threshold: 0.1, 
+        {
+          threshold: 0.1,
           rootMargin: "0px 0px -50px 0px"
         }
       );
@@ -148,9 +148,8 @@ export default function HomePage() {
       {/* --- PRELOADER SCREEN --- */}
       {isLoading && (
         <div
-          className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#0a0a0a] transition-all duration-[800ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${
-            fadeOutPreloader ? "opacity-0 -translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"
-          }`}
+          className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#0a0a0a] transition-all duration-[800ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${fadeOutPreloader ? "opacity-0 -translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"
+            }`}
         >
           <div className="flex flex-col items-center justify-center animate-pulse">
             <Image
@@ -175,10 +174,9 @@ export default function HomePage() {
       )}
 
       {/* --- MAIN PAGE CONTENT --- */}
-      <div 
-        className={`bg-[#f6f7fb] text-gray-900 overflow-hidden transition-all duration-[1000ms] ease-out ${
-          isLoading && !fadeOutPreloader ? "opacity-0 translate-y-4 scale-[0.99]" : "opacity-100 translate-y-0 scale-100"
-        }`}
+      <div
+        className={`bg-[#f6f7fb] text-gray-900 overflow-hidden transition-all duration-[1000ms] ease-out ${isLoading && !fadeOutPreloader ? "opacity-0 translate-y-4 scale-[0.99]" : "opacity-100 translate-y-0 scale-100"
+          }`}
       >
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -321,15 +319,28 @@ export default function HomePage() {
           <div className="reveal-elem fade-up mx-auto max-w-6xl rounded-[32px] bg-white p-6 shadow-sm ring-1 ring-gray-100 md:p-8">
             <div className="grid items-stretch gap-6 md:grid-cols-4">
               <div className="flex flex-col justify-center md:justify-start">
-                <div className="rounded-[24px] bg-[#f8fafc] px-6 py-5 ring-1 ring-gray-100">
+
+                {/* 1. Mandatory Clarifying Text ABOVE the logo */}
+                <p className="mb-3 text-sm font-bold leading-snug text-gray-900 text-center md:text-left">
+                  Winner of the UNDP Generali Insurance Innovation Challenge Fund in Malaysia
+                </p>
+
+                {/* Enlarged Logo Container */}
+                <div className="flex w-full items-center justify-center rounded-[24px] bg-[#1a0b35] p-6 ring-1 ring-white/10 min-h-[180px]">
                   <Image
-                    src="/images/UNDP logo.png"
-                    alt="UNDP logo"
-                    width={240}
-                    height={120}
-                    className="h-[70px] w-auto object-contain md:h-[90px]"
+                    src="/images/undp-logo.png"
+                    alt="UNDP IRFF Logo"
+                    width={400}
+                    height={200}
+                    className="h-auto w-full max-h-[300px] object-contain"
                   />
                 </div>
+
+                {/* 2. Mandatory Disclaimer */}
+                <p className="mt-3 text-xs italic text-gray-500 text-center md:text-left">
+                  “UNDP does not endorse any entity, brand, product, or service.”
+                </p>
+
               </div>
               <div className="col-span-2 flex flex-col text-center md:text-left">
                 <div>
@@ -344,11 +355,6 @@ export default function HomePage() {
                     innovation-driven protection solutions that support SMEs and more
                     inclusive business resilience.
                   </p>
-                </div>
-                <div className="mt-auto pt-6 flex justify-center md:justify-start">
-                  <div className="inline-flex rounded-full bg-[#f6f7fb] px-4 py-2 text-sm text-gray-500 ring-1 ring-gray-100">
-                    UNDP does not endorse any entity, brand, product, or service.
-                  </div>
                 </div>
               </div>
               <div className="flex w-full flex-col h-full">
@@ -430,7 +436,7 @@ export default function HomePage() {
             </div>
 
             {/* Right box comes in from the right */}
-            <div 
+            <div
               className="reveal-elem fade-left rounded-[32px] bg-gradient-to-br from-[#ede9fe] via-[#fdf2f8] to-[#dbeafe] p-8 shadow-sm md:p-10"
               style={{ transitionDelay: "200ms" }}
             >
@@ -450,8 +456,8 @@ export default function HomePage() {
                       key={index}
                       onClick={() => toggleCoverage(index)}
                       className={`cursor-pointer rounded-2xl p-4 transition-all duration-300 ${activeCoverage === index
-                          ? "bg-white shadow-md ring-2 ring-purple-400"
-                          : "bg-white/80 backdrop-blur hover:bg-white hover:shadow-sm"
+                        ? "bg-white shadow-md ring-2 ring-purple-400"
+                        : "bg-white/80 backdrop-blur hover:bg-white hover:shadow-sm"
                         }`}
                     >
                       <div className="flex items-center justify-between font-semibold text-gray-900">
@@ -519,10 +525,14 @@ export default function HomePage() {
             </div>
 
             <div className="relative w-full overflow-hidden py-4 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-[#ede9fe] before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-[#dbeafe] after:to-transparent">
+              {/* Note: Ensure this parent div has 'flex w-max' in your CSS for animate-partner-marquee to keep them in a horizontal line */}
               <div className="animate-partner-marquee gap-6 px-3">
                 {displayPartners.map((partner, i) => (
-                  <div
+                  <a
                     key={`${partner.name}-${i}`}
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex h-28 w-44 shrink-0 flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md cursor-pointer"
                   >
                     <img
@@ -537,7 +547,7 @@ export default function HomePage() {
                     <span className="mt-1 text-xs font-bold uppercase tracking-wider text-purple-700 text-center line-clamp-1">
                       {partner.name}
                     </span>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
