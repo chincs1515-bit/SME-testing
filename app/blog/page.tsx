@@ -28,7 +28,7 @@ const posts = [
     description:
       "Medical claims hit RM9.4 billion in 2025, accounting for 53.9% of total life insurance payouts in Malaysia, reinforcing the importance of robust employee benefits to cushion rising medical inflation.",
     url: "https://www.freemalaysiatoday.com/category/nation/2026/04/14/medical-claims-hit-rm9-4bil-up-5-3-in-2025",
-    image: "/images/blog/image3.png", 
+    image: "/images/blog/image3.png",
   },
   {
     title: "Digital Platforms Transform Insurance Buying in Malaysia",
@@ -37,7 +37,7 @@ const posts = [
     description:
       "A shift toward digital channels is closing the accessibility gap, with surveys showing 88% of buyers feel confident purchasing protection digitally due to improved convenience and flexible payments.",
     url: "https://www.motortrader.com.my/news/digital-platforms-transform-insurance-buying-in-malaysia/",
-    image: "/images/blog/image1.jpg", 
+    image: "/images/blog/image1.jpg",
   },
   {
     title: "Navigating Medical Inflation: The 2027 RESET Strategy",
@@ -46,8 +46,17 @@ const posts = [
     description:
       "To address Malaysia's rising private healthcare costs, Bank Negara Malaysia is preparing a standard Base Medical and Health Insurance Plan to ensure medical protection remains affordable and transparent.",
     url: "https://www.skrine.com/insights/alerts/january-2026-1/anticipating-a-2027-reset-a-snapshot-of-the-outl",
-    image: "/images/blog/image2.png", 
-  }
+    image: "/images/blog/image2.png",
+  },
+  {
+    title: "Trooperks is introduce for Gig worker economy",
+    category: "Partnership & Innovation",
+    date: "May 7, 2026",
+    description:
+      "Troopers has launch the Trooperks to looking after the people who power every shift with covered by a welfare program that supports you before, during, and after your work, without any extra-cost.",
+    url: "https://theedgemalaysia.com/node/802872",
+    image: "/images/troopers.jpg",
+  },
 ];
 
 export default function BlogPage() {
@@ -63,8 +72,8 @@ export default function BlogPage() {
           }
         });
       },
-      { 
-        threshold: 0.1, 
+      {
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
       }
     );
@@ -77,7 +86,7 @@ export default function BlogPage() {
 
   return (
     <div className="bg-[#f6f7fb] text-gray-900 overflow-hidden">
-      
+
       {/* Animation Styles */}
       <style dangerouslySetInnerHTML={{
         __html: `

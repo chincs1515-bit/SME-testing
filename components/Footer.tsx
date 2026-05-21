@@ -107,6 +107,9 @@ export default function Footer() {
             <Link href="/flexibenefit" className="transition hover:text-white">
               FlexiBenefit
             </Link>
+            <Link href="/loss-prevention" className="transition hover:text-white">
+              Loss Prevention
+            </Link>
             <Link href="/careconnect" className="transition hover:text-white">
               Care Connect
             </Link>

@@ -114,6 +114,13 @@ export default function Navbar() {
             </Link>
 
             <Link
+              href="/loss-prevention"
+              className="whitespace-nowrap text-[13px] font-semibold uppercase tracking-[0.04em] text-gray-500 transition hover:text-[#ff1493]"
+            >
+              Loss Prevention
+            </Link>
+
+            <Link
               href="/careconnect"
               className="whitespace-nowrap text-[13px] font-semibold uppercase tracking-[0.04em] text-gray-500 transition hover:text-[#ff1493]"
             >
@@ -168,6 +175,9 @@ export default function Navbar() {
             </Link>
             <Link href="/flexibenefit" className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-[#f6f7fb]">
               Flexi Benefits
+            </Link>
+            <Link href="/loss-prevention" className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-[#f6f7fb]">
+              Loss Prevention
             </Link>
             <Link href="/careconnect" className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-[#f6f7fb]">
               CareConnect
