@@ -533,7 +533,7 @@ export default function LossPreventionPage() {
                 </h3>
                 <input 
                   type="text"
-                  placeholder="e.g. Neuroacura Sdn Bhd"
+                  placeholder="e.g. XXX Sdn Bhd"
                   className="w-full p-4 rounded-xl border border-slate-300 focus:ring-2 focus:ring-purple-600 outline-none text-slate-700 font-medium"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
