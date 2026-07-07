@@ -641,10 +641,8 @@ export default function SolutionsPage() {
               <h4 className="text-xl font-bold">General exclusions</h4>
               {/* Added Emojis here */}
               <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
-                <li>☢️ Radioactive contamination</li>
                 <li>🏛️ Acts of authorities</li>
                 <li>🦠 Communicable diseases</li>
-                <li>⚔️ War & terrorism</li>
                 <li>📉 Consequential loss</li>
               </ul>
             </div>
