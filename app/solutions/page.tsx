@@ -92,7 +92,6 @@ const ebizcoverProducts = [
     audience: "Tuition centres, preschools, and online learning hubs.",
     highlights:
       "Comprehensive General Liability, First Loss Basis, Content & Equipment All Risk.",
-    pricing: "Basic RM515.97 · Standard RM909.43 · Superior RM1,440.51",
     details: [
       "Property all risks for building, renovation, furniture and fittings",
       "Theft, armed robbery or hold-up",
@@ -112,7 +111,6 @@ const ebizcoverProducts = [
     audience: "Cafes, neighbourhood food stalls, and fast-moving food trucks.",
     highlights:
       "Tailored for food trucks, food spoilage due to covered events, and options to cover staff.",
-    pricing: "Food Stalls/Trucks RM119.34 · Basic RM363.07 · Superior RM658.38",
     details: [
       "Renovation, content, business equipment and stock",
       "Theft, armed robbery or hold-up",
@@ -132,7 +130,6 @@ const ebizcoverProducts = [
     audience: "Beauty studios, hair salons, and nail parlours.",
     highlights:
       "Content & Equipment All Risk, inconvenience allowance for business closure, and lady entrepreneur protection.",
-    pricing: "Basic RM356.16 · Standard RM590.56 · Superior RM843.32",
     details: [
       "Property all risks for renovation, furniture, fittings, content and stock-in-trade",
       "Theft, armed robbery or hold-up",
@@ -153,7 +150,6 @@ const ebizcoverProducts = [
       "Jewelry makers, fashion goods, handmade art booths, and mall kiosks.",
     highlights:
       "Protection for theft/robbery, inconvenience allowance, and employee coverage.",
-    pricing: "Basic RM117.36 · Standard RM389.74 · Superior RM725.16",
     details: [
       "Property all risks for renovation, content, business equipment and stock",
       "Theft, armed robbery or hold-up",
@@ -590,15 +586,6 @@ export default function SolutionsPage() {
                           </p>
                           <p className="mt-3 text-sm leading-7 text-slate-700">
                             {item.highlights}
-                          </p>
-                        </div>
-
-                        <div className="rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
-                          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
-                            Pricing
-                          </p>
-                          <p className="mt-3 text-sm leading-7 font-semibold text-slate-900">
-                            {item.pricing}
                           </p>
                         </div>
                       </div>
