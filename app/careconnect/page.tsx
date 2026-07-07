@@ -157,7 +157,7 @@ export default function CareConnectPage() {
               </p>
             </div>
 
-            <div className="rounded-[28px] bg-gradient-to-br from-[#dbeafe] via-[#ecfeff] to-[#e0f2fe] p-6">
+            <div className="rounded-[28px] bg-gradient-to-br from-[#dbeafe] via-[#ecfeff] to-[#e0f2fe] p-0">
               <div className="overflow-hidden rounded-[24px] shadow-sm">
                 <Image
                   src="/images/vsureXheydoc.jpg"
