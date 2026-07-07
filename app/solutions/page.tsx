@@ -11,6 +11,13 @@ import {
   CheckCircle2,
   Sparkles,
   ChevronDown,
+  ShieldCheck,
+  Flame,
+  Activity,
+  ShieldAlert,
+  Users,
+  Droplets,
+  Sun
 } from "lucide-react";
 
 const ezpaPlans = [
@@ -83,88 +90,28 @@ const careConnectPlans = [
   },
 ];
 
-const ebizcoverProducts = [
+const whyEbizCover = [
   {
-    id: "educare",
-    number: "01",
-    title: "EduCare",
-    subtitle: "For Education Centres, Tutors & Learning Providers",
-    audience: "Tuition centres, preschools, and online learning hubs.",
-    highlights:
-      "Comprehensive General Liability, First Loss Basis, Content & Equipment All Risk.",
-    pricing: "Basic RM515.97 · Standard RM909.43 · Superior RM1,440.51",
-    details: [
-      "Property all risks for building, renovation, furniture and fittings",
-      "Theft, armed robbery or hold-up",
-      "Plate glass cover",
-      "Money in transit / money in premise",
-      "Employer's liability: RM1,000,000 per event",
-      "Inconvenience allowance up to 180 days",
-      "Content / equipment all risk available in higher plans",
-      "Comprehensive general liability: RM250,000 per event",
-    ],
+    title: "Broad Coverage",
+    description: "Protects against business interruptions and income loss, ensuring your operations remain resilient."
   },
   {
-    id: "fnb-care",
-    number: "02",
-    title: "F&B Care",
-    subtitle: "For F&B Stalls, Cafes and Food Trucks",
-    audience: "Cafes, neighbourhood food stalls, and fast-moving food trucks.",
-    highlights:
-      "Tailored for food trucks, food spoilage due to covered events, and options to cover staff.",
-    pricing: "Food Stalls/Trucks RM119.34 · Basic RM363.07 · Superior RM658.38",
-    details: [
-      "Renovation, content, business equipment and stock",
-      "Theft, armed robbery or hold-up",
-      "Plate glass cover",
-      "Employer's liability: RM100,000 per event",
-      "Public liability: RM100,000 per event",
-      "Fidelity guarantee: RM5,000",
-      "Inconvenience allowance up to 180 days",
-      "Group PA available in selected plans",
-    ],
+    title: "Accessibility & Affordability",
+    description: "Tailored for SMEs, offering robust protection at a cost-effective price."
   },
   {
-    id: "beauty-care",
-    number: "03",
-    title: "Beauty Care",
-    subtitle: "For Beauty Parlours & Salons",
-    audience: "Beauty studios, hair salons, and nail parlours.",
-    highlights:
-      "Content & Equipment All Risk, inconvenience allowance for business closure, and lady entrepreneur protection.",
-    pricing: "Basic RM356.16 · Standard RM590.56 · Superior RM843.32",
-    details: [
-      "Property all risks for renovation, furniture, fittings, content and stock-in-trade",
-      "Theft, armed robbery or hold-up",
-      "Plate glass cover",
-      "Money in transit / in premise",
-      "Employer's liability: RM100,000 per event",
-      "Public liability: RM100,000 per event",
-      "Fidelity guarantee: RM5,000",
-      "Lady Protector available in selected plans",
-    ],
-  },
-  {
-    id: "retail-care",
-    number: "04",
-    title: "Retail Care",
-    subtitle: "For Pop-Up Booths & Mall Kiosks",
-    audience:
-      "Jewelry makers, fashion goods, handmade art booths, and mall kiosks.",
-    highlights:
-      "Protection for theft/robbery, inconvenience allowance, and employee coverage.",
-    pricing: "Basic RM117.36 · Standard RM389.74 · Superior RM725.16",
-    details: [
-      "Property all risks for renovation, content, business equipment and stock",
-      "Theft, armed robbery or hold-up",
-      "Plate glass cover",
-      "Money in transit / money in premise",
-      "Employer's liability: RM100,000 per event",
-      "Public liability: RM100,000 per event",
-      "Fidelity guarantee: RM5,000",
-      "Group PA available in higher plans",
-    ],
-  },
+    title: "Risk Management Support",
+    description: "Provides proactive risk insights to help strengthen your business and manage vulnerabilities."
+  }
+];
+
+const ebizBenefits = [
+  { label: "Fire Material Damage (Up to)", value: "RM480,000", icon: Flame },
+  { label: "Business Interruption", value: "Up to 10% of Fire Material Damage sum insured", icon: Activity },
+  { label: "Burglary Coverage (Up To)", value: "RM50,000", icon: ShieldAlert },
+  { label: "Public Liability (Up To)", value: "RM10,000", icon: Users },
+  { label: "Annual Premium with flood coverage", value: "(from) RM230*", icon: Droplets, highlight: true },
+  { label: "Annual Premium without flood coverage", value: "as low as RM180*", icon: Sun, highlight: true }
 ];
 
 const cyberTiers = [
@@ -214,7 +161,7 @@ function SectionTitle({
 
 export default function SolutionsPage() {
   const [openEbizcover, setOpenEbizcover] = useState<string>("educare");
-  
+
   // Accordion states for Trade Credit and Premium Financing
   const [activeTrade, setActiveTrade] = useState<number | null>(null);
   const [activePremium, setActivePremium] = useState<number | null>(null);
@@ -230,8 +177,8 @@ export default function SolutionsPage() {
           }
         });
       },
-      { 
-        threshold: 0.1, 
+      {
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
       }
     );
@@ -244,7 +191,7 @@ export default function SolutionsPage() {
 
   return (
     <div className="bg-[#f6f7fb] text-slate-900 overflow-hidden">
-      
+
       {/* Animation Styles */}
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -515,142 +462,84 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* EBizCover */}
-      <section id="ebizcover" className="px-6 py-10">
-        <div className="reveal-elem fade-up mx-auto max-w-7xl rounded-[32px] bg-gradient-to-br from-[#ede9fe] via-[#fdf2f8] to-[#dbeafe] p-8 shadow-sm md:p-10">
-          <SectionTitle
-            eyebrow="EBizCover"
-            title="Essential business cover for small businesses"
-            desc="EBizCover provides broad commercial risk coverage for small businesses, helping make business insurance more accessible and affordable for MSMEs."
-          />
+      {/* --- EBIZCOVER SECTION --- */}
+      <section id="ebizcover" className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
 
-          <div className="mb-8 grid gap-4 md:grid-cols-3">
-            {[
-              "Covers common commercial risks for small businesses",
-              "Includes protection such as liability, property-related losses, and business interruption support",
-              "Designed around practical business categories with simple package structures",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-[24px] bg-[#f8fafc] p-5 ring-1 ring-slate-100"
-              >
-                <CheckCircle2 className="mb-3 h-5 w-5 text-fuchsia-600" />
-                <p className="text-sm leading-7 text-slate-700">{item}</p>
+          {/* Premium Top Info Banner (Replacing Image with Icon) */}
+          <div className="reveal-elem fade-up rounded-[32px] bg-gradient-to-br from-[#27114a] via-[#4b1f87] to-[#ea4c89] text-white p-10 md:p-14 shadow-2xl mb-16 relative overflow-hidden">
+            <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[80%] rounded-full bg-white opacity-10 blur-[100px] pointer-events-none"></div>
+
+            <div className="relative z-10 grid gap-10 md:grid-cols-[1fr_auto] items-center">
+              <div>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold backdrop-blur-sm">
+                  <ShieldCheck className="h-4 w-4 text-pink-300" />
+                  Essential Business Protection
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">EBizCover</h2>
+                <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-2xl">
+                  Protect your business from unexpected risks with eBizCover's comprehensive coverage.
+                </p>
+
+                <h3 className="font-bold text-white mb-4 uppercase tracking-wider text-sm">Why EBIZCOVER?</h3>
+                <div className="space-y-4 max-w-3xl">
+                  {whyEbizCover.map((item, idx) => (
+                    <p key={idx} className="text-sm text-white/80 leading-relaxed">
+                      <span className="font-bold text-white">{item.title}: </span>
+                      {item.description}
+                    </p>
+                  ))}
+                </div>
               </div>
-            ))}
+
+              {/* Large Icon instead of an Image */}
+              <div className="hidden md:flex items-center justify-center p-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md h-56 w-56 shadow-inner">
+                <ShieldCheck className="w-28 h-28 text-pink-300" />
+              </div>
+            </div>
           </div>
 
-          <div className="rounded-[28px] border border-slate-200 bg-[#fcfcfd] px-6 py-2 md:px-10">
-            {ebizcoverProducts.map((item) => {
-              const isOpen = openEbizcover === item.id;
+          {/* Benefits Title */}
+          <div className="reveal-elem fade-up text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900">What are the benefits?</h2>
+          </div>
 
+          {/* Styled Benefits Grid (All Pink/Purple Theme) */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
+            {ebizBenefits.map((benefit, index) => {
+              const Icon = benefit.icon;
               return (
                 <div
-                  key={item.id}
-                  className="border-b border-slate-200 py-6 last:border-b-0"
+                  key={index}
+                  className="reveal-elem fade-up flex flex-col items-center justify-center text-center p-8 rounded-[28px] border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-purple-50 to-pink-50 border-purple-100 shadow-sm"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setOpenEbizcover(isOpen ? "" : item.id)}
-                    className="flex w-full items-start justify-between gap-6 text-left"
-                  >
-                    <h4 className="text-xl font-bold text-slate-900 md:text-3xl">
-                      [{item.number}] {item.title}
-                    </h4>
+                  {/* Purple Icon Box */}
+                  <div className="mb-5 p-4 rounded-2xl bg-purple-100 text-purple-600">
+                    <Icon className="h-7 w-7" />
+                  </div>
 
-                    <p className="mt-2 text-sm font-medium text-slate-500">
-                      {item.subtitle}
-                    </p>
+                  {/* Label */}
+                  <p className="text-sm text-gray-500 mb-3 font-medium px-4">
+                    {benefit.label}
+                  </p>
 
-                    <div
-                      className={`mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-2xl transition ${isOpen
-                          ? "bg-[#ebe9fe] text-[#4f46e5]"
-                          : "bg-[#2f39f5] text-white"
-                        }`}
-                    >
-                      {isOpen ? "−" : "+"}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="pt-6">
-                      <div className="grid gap-4 lg:grid-cols-3">
-                        <div className="rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
-                          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
-                            Target Audience
-                          </p>
-                          <p className="mt-3 text-sm leading-7 text-slate-700">
-                            {item.audience}
-                          </p>
-                        </div>
-
-                        <div className="rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
-                          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
-                            Key Highlights
-                          </p>
-                          <p className="mt-3 text-sm leading-7 text-slate-700">
-                            {item.highlights}
-                          </p>
-                        </div>
-
-                        <div className="rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
-                          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
-                            Pricing
-                          </p>
-                          <p className="mt-3 text-sm leading-7 font-semibold text-slate-900">
-                            {item.pricing}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="mt-4 rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
-                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
-                          Coverage Details
-                        </p>
-
-                        <div className="mt-4 grid gap-3 md:grid-cols-2">
-                          {item.details.map((detail) => (
-                            <div
-                              key={detail}
-                              className="rounded-2xl bg-[#f8fafc] px-4 py-3 text-sm leading-7 text-slate-700"
-                            >
-                              {detail}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  {/* Purple/Pink Gradient Text for Value */}
+                  <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4b1f87] to-[#ea4c89]">
+                    {benefit.value}
+                  </h3>
                 </div>
               );
             })}
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            <div className="rounded-[24px] bg-[#faf7ff] p-5 ring-1 ring-fuchsia-100">
-              <h4 className="text-xl font-bold">Optional add-ons</h4>
-              {/* Added Emojis here */}
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
-                <li>➕ Top-up on renovation / content / stock cover</li>
-                <li>👥 Group PA extension for employees</li>
-                <li>🏢 Comprehensive General Liability add-on for EduCare only</li>
-              </ul>
-            </div>
-
-            <div className="rounded-[24px] bg-[#fff8f1] p-5 ring-1 ring-orange-100">
-              <h4 className="text-xl font-bold">General exclusions</h4>
-              {/* Added Emojis here */}
-              <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
-                <li>☢️ Radioactive contamination</li>
-                <li>🏛️ Acts of authorities</li>
-                <li>🦠 Communicable diseases</li>
-                <li>⚔️ War & terrorism</li>
-                <li>📉 Consequential loss</li>
-              </ul>
-            </div>
+          {/* Footnote */}
+          <div className="reveal-elem fade-up text-center mb-12">
+            <p className="text-sm text-gray-400 italic">*Amount before 8% SST and stamp duty</p>
           </div>
+
         </div>
       </section>
+      {/* --- END EBIZCOVER SECTION --- */}
 
       {/* CyberPro */}
       <section id="cyberpro" className="px-6 py-10">
@@ -778,7 +667,7 @@ export default function SolutionsPage() {
                     <p className="text-sm font-semibold leading-7 text-slate-700">{item.title}</p>
                     <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                   </div>
-                  
+
                   <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"}`}>
                     <div className="overflow-hidden">
                       <p className="text-sm text-slate-600 border-t border-slate-200 pt-2 mt-1">
@@ -829,7 +718,7 @@ export default function SolutionsPage() {
                     <p className="text-sm font-semibold leading-7 text-slate-700">{item.title}</p>
                     <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                   </div>
-                  
+
                   <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"}`}>
                     <div className="overflow-hidden">
                       <p className="text-sm text-slate-600 border-t border-slate-200 pt-2 mt-1">
