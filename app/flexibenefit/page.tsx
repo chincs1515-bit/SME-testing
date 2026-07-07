@@ -98,7 +98,7 @@ const allMerchants = [
   { name: "Lazo Diamond", category: "Lifestyle & Retail", logo: "/images/merchant/lazodiamond.png" },
   { name: "Lost World of Tambun", category: "Entertainment & Services", logo: "/images/merchant/lostworld.png" },
   { name: "Lotus's", category: "Groceries", logo: "/images/merchant/lotus's.png" },
-  { name: "Metro Optical Group", category: "Wellness", logo: "/images/merchant/mog.png" },
+  { name: "Metro Optical Group", category: "Wellness", logo: "/images/merchant/MOG.png" },
   { name: "Montigo", category: "Lifestyle & Retail", logo: "/images/merchant/montigo.png" },
   { name: "NSK Grocer", category: "Groceries", logo: "/images/merchant/nsk.jpg" },
   { name: "Pensonic", category: "Lifestyle & Retail", logo: "/images/merchant/pensonic.png" },

@@ -92,6 +92,7 @@ const careConnectPlans = [
 
 const whyEbizCover = [
   {
+<<<<<<< HEAD
     title: "Broad Coverage",
     description: "Protects against business interruptions and income loss, ensuring your operations remain resilient."
   },
@@ -112,6 +113,84 @@ const ebizBenefits = [
   { label: "Public Liability (Up To)", value: "RM10,000", icon: Users },
   { label: "Annual Premium with flood coverage", value: "(from) RM230*", icon: Droplets, highlight: true },
   { label: "Annual Premium without flood coverage", value: "as low as RM180*", icon: Sun, highlight: true }
+=======
+    id: "educare",
+    number: "01",
+    title: "EduCare",
+    subtitle: "For Education Centres, Tutors & Learning Providers",
+    audience: "Tuition centres, preschools, and online learning hubs.",
+    highlights:
+      "Comprehensive General Liability, First Loss Basis, Content & Equipment All Risk.",
+    details: [
+      "Property all risks for building, renovation, furniture and fittings",
+      "Theft, armed robbery or hold-up",
+      "Plate glass cover",
+      "Money in transit / money in premise",
+      "Employer's liability: RM1,000,000 per event",
+      "Inconvenience allowance up to 180 days",
+      "Content / equipment all risk available in higher plans",
+      "Comprehensive general liability: RM250,000 per event",
+    ],
+  },
+  {
+    id: "fnb-care",
+    number: "02",
+    title: "F&B Care",
+    subtitle: "For F&B Stalls, Cafes and Food Trucks",
+    audience: "Cafes, neighbourhood food stalls, and fast-moving food trucks.",
+    highlights:
+      "Tailored for food trucks, food spoilage due to covered events, and options to cover staff.",
+    details: [
+      "Renovation, content, business equipment and stock",
+      "Theft, armed robbery or hold-up",
+      "Plate glass cover",
+      "Employer's liability: RM100,000 per event",
+      "Public liability: RM100,000 per event",
+      "Fidelity guarantee: RM5,000",
+      "Inconvenience allowance up to 180 days",
+      "Group PA available in selected plans",
+    ],
+  },
+  {
+    id: "beauty-care",
+    number: "03",
+    title: "Beauty Care",
+    subtitle: "For Beauty Parlours & Salons",
+    audience: "Beauty studios, hair salons, and nail parlours.",
+    highlights:
+      "Content & Equipment All Risk, inconvenience allowance for business closure, and lady entrepreneur protection.",
+    details: [
+      "Property all risks for renovation, furniture, fittings, content and stock-in-trade",
+      "Theft, armed robbery or hold-up",
+      "Plate glass cover",
+      "Money in transit / in premise",
+      "Employer's liability: RM100,000 per event",
+      "Public liability: RM100,000 per event",
+      "Fidelity guarantee: RM5,000",
+      "Lady Protector available in selected plans",
+    ],
+  },
+  {
+    id: "retail-care",
+    number: "04",
+    title: "Retail Care",
+    subtitle: "For Pop-Up Booths & Mall Kiosks",
+    audience:
+      "Jewelry makers, fashion goods, handmade art booths, and mall kiosks.",
+    highlights:
+      "Protection for theft/robbery, inconvenience allowance, and employee coverage.",
+    details: [
+      "Property all risks for renovation, content, business equipment and stock",
+      "Theft, armed robbery or hold-up",
+      "Plate glass cover",
+      "Money in transit / money in premise",
+      "Employer's liability: RM100,000 per event",
+      "Public liability: RM100,000 per event",
+      "Fidelity guarantee: RM5,000",
+      "Group PA available in higher plans",
+    ],
+  },
+>>>>>>> d654f9573e43df7d4483f01b0eb3a77b00314c7a
 ];
 
 const cyberTiers = [
@@ -523,18 +602,94 @@ export default function SolutionsPage() {
                     {benefit.label}
                   </p>
 
+<<<<<<< HEAD
                   {/* Purple/Pink Gradient Text for Value */}
                   <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4b1f87] to-[#ea4c89]">
                     {benefit.value}
                   </h3>
+=======
+                    <div
+                      className={`mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-2xl transition ${isOpen
+                          ? "bg-[#ebe9fe] text-[#4f46e5]"
+                          : "bg-[#2f39f5] text-white"
+                        }`}
+                    >
+                      {isOpen ? "−" : "+"}
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="pt-6">
+                      <div className="grid gap-4 lg:grid-cols-3">
+                        <div className="rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
+                          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
+                            Target Audience
+                          </p>
+                          <p className="mt-3 text-sm leading-7 text-slate-700">
+                            {item.audience}
+                          </p>
+                        </div>
+
+                        <div className="rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
+                          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
+                            Key Highlights
+                          </p>
+                          <p className="mt-3 text-sm leading-7 text-slate-700">
+                            {item.highlights}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 rounded-[20px] bg-white p-5 ring-1 ring-slate-100">
+                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
+                          Coverage Details
+                        </p>
+
+                        <div className="mt-4 grid gap-3 md:grid-cols-2">
+                          {item.details.map((detail) => (
+                            <div
+                              key={detail}
+                              className="rounded-2xl bg-[#f8fafc] px-4 py-3 text-sm leading-7 text-slate-700"
+                            >
+                              {detail}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+>>>>>>> d654f9573e43df7d4483f01b0eb3a77b00314c7a
                 </div>
               );
             })}
           </div>
 
+<<<<<<< HEAD
           {/* Footnote */}
           <div className="reveal-elem fade-up text-center mb-12">
             <p className="text-sm text-gray-400 italic">*Amount before 8% SST and stamp duty</p>
+=======
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            <div className="rounded-[24px] bg-[#faf7ff] p-5 ring-1 ring-fuchsia-100">
+              <h4 className="text-xl font-bold">Optional add-ons</h4>
+              {/* Added Emojis here */}
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
+                <li>➕ Top-up on renovation / content / stock cover</li>
+                <li>👥 Group PA extension for employees</li>
+                <li>🏢 Comprehensive General Liability add-on for EduCare only</li>
+              </ul>
+            </div>
+
+            <div className="rounded-[24px] bg-[#fff8f1] p-5 ring-1 ring-orange-100">
+              <h4 className="text-xl font-bold">General exclusions</h4>
+              {/* Added Emojis here */}
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
+                <li>🏛️ Acts of authorities</li>
+                <li>🦠 Communicable diseases</li>
+                <li>📉 Consequential loss</li>
+              </ul>
+            </div>
+>>>>>>> d654f9573e43df7d4483f01b0eb3a77b00314c7a
           </div>
 
         </div>
